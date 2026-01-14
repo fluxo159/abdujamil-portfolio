@@ -51,7 +51,7 @@ export function ProjectDetails({ slug }: ProjectDetailsProps) {
                 href={project.links.bot}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/[0.12] px-4 py-2 text-sm font-semibold text-white/70 hover:bg-white/[0.08] hover:text-white"
+                className="inline-flex items-center gap-2 rounded-full border border-white/[0.16] bg-white/[0.06] px-4 py-2 text-sm font-semibold text-white/90 shadow-[0_10px_24px_rgba(0,0,0,0.3)] hover:bg-white/[0.12] hover:text-white"
               >
                 <ExternalLink size={16} aria-hidden="true" />
                 {content.ui.botLabel}
@@ -62,7 +62,7 @@ export function ProjectDetails({ slug }: ProjectDetailsProps) {
                 href={project.links.github}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.06] px-4 py-2 text-sm font-semibold text-white/80 hover:bg-white/[0.12] hover:text-white"
+                className="inline-flex items-center gap-2 rounded-full border border-white/[0.16] bg-white/[0.08] px-4 py-2 text-sm font-semibold text-white/90 shadow-[0_10px_24px_rgba(0,0,0,0.3)] hover:bg-white/[0.14] hover:text-white"
               >
                 <Github size={16} aria-hidden="true" />
                 {content.ui.githubLabel}

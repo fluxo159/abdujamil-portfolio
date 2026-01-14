@@ -105,7 +105,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-3">
                 <a
                   href={profile.links.cvUrl}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.08] px-4 py-2 text-sm font-medium text-white transition hover:bg-white/[0.14]"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.18] bg-white/[0.12] px-4 py-2 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(0,0,0,0.35)] transition hover:bg-white/[0.18] hover:shadow-[0_16px_36px_rgba(0,0,0,0.4)]"
                 >
                   <FileDown size={16} aria-hidden="true" />
                   {content.ui.cvLabel}
@@ -114,7 +114,7 @@ export default function Home() {
                   href={profile.links.telegram}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.12] px-4 py-2 text-sm font-medium text-white/80 transition hover:bg-white/[0.08] hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.16] bg-white/[0.06] px-4 py-2 text-sm font-semibold text-white/90 shadow-[0_10px_24px_rgba(0,0,0,0.3)] transition hover:bg-white/[0.12] hover:text-white"
                 >
                   <MessageSquare size={16} aria-hidden="true" />
                   {content.ui.telegramLabel}
@@ -123,7 +123,7 @@ export default function Home() {
                   href={profile.links.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.12] px-4 py-2 text-sm font-medium text-white/80 transition hover:bg-white/[0.08] hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.16] bg-white/[0.06] px-4 py-2 text-sm font-semibold text-white/90 shadow-[0_10px_24px_rgba(0,0,0,0.3)] transition hover:bg-white/[0.12] hover:text-white"
                 >
                   <Github size={16} aria-hidden="true" />
                   {content.ui.githubLabel}
@@ -234,7 +234,7 @@ export default function Home() {
                           href={project.links.bot}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-2 rounded-full border border-white/[0.12] px-3 py-1.5 text-xs font-semibold text-white/70 transition hover:bg-white/[0.08] hover:text-white"
+                          className="inline-flex items-center gap-2 rounded-full border border-white/[0.16] bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-white/90 shadow-[0_10px_24px_rgba(0,0,0,0.28)] transition hover:bg-white/[0.12] hover:text-white"
                         >
                           <MessageSquare size={14} aria-hidden="true" />
                           {content.ui.botLabel}
@@ -245,7 +245,7 @@ export default function Home() {
                           href={project.links.github}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-white/80 transition hover:bg-white/[0.12] hover:text-white"
+                          className="inline-flex items-center gap-2 rounded-full border border-white/[0.16] bg-white/[0.08] px-3 py-1.5 text-xs font-semibold text-white/90 shadow-[0_10px_24px_rgba(0,0,0,0.28)] transition hover:bg-white/[0.14] hover:text-white"
                         >
                           <Github size={14} aria-hidden="true" />
                           {content.ui.githubLabel}
