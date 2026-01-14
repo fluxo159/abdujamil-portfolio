@@ -1,6 +1,7 @@
 "use client";
 
-import { Download, FileText } from "lucide-react";
+import Link from "next/link";
+import { ArrowLeft, Download, FileText } from "lucide-react";
 import { Card } from "@/components/Card";
 import { SectionTitle } from "@/components/SectionTitle";
 import { useLanguage } from "@/components/LanguageProvider";
@@ -16,7 +17,14 @@ export function ProgressList({ groups }: ProgressListProps) {
   return (
     <div className="min-h-screen">
       <main className="mx-auto w-full max-w-[1120px] px-4 pb-16 pt-10 md:px-6 lg:px-8">
-        <Card className="p-6 md:p-8">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white"
+        >
+          <ArrowLeft size={16} aria-hidden="true" />
+          {content.ui.backLabel}
+        </Link>
+        <Card className="mt-6 p-6 md:p-8">
           <SectionTitle>{content.ui.progressTitle}</SectionTitle>
           <div className="mt-6 space-y-3">
             {!hasFiles ? (
