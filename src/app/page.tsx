@@ -1,9 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import {
-  ArrowUpRight,
   Briefcase,
   ExternalLink,
   FileDown,
@@ -206,13 +204,7 @@ export default function Home() {
                           {project.description}
                         </p>
                       </div>
-                      <Link
-                        href={`/projects/${project.slug}`}
-                        className="inline-flex items-center gap-1 text-xs font-semibold text-white/60 transition group-hover:text-white"
-                      >
-                        {content.ui.caseLabel}
-                        <ArrowUpRight size={14} aria-hidden="true" />
-                      </Link>
+                      <div className="h-6" aria-hidden="true" />
                     </div>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
