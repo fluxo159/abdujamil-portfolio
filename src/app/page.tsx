@@ -229,15 +229,6 @@ export default function Home() {
                           {content.ui.demoLabel}
                         </a>
                       ) : null}
-                      {project.links.progress ? (
-                        <a
-                          href={project.links.progress}
-                          className="inline-flex items-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-white/80 transition hover:bg-white/[0.12] hover:text-white"
-                        >
-                          <ExternalLink size={14} aria-hidden="true" />
-                          {content.ui.progressLabel}
-                        </a>
-                      ) : null}
                       {project.links.bot ? (
                         <a
                           href={project.links.bot}

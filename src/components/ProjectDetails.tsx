@@ -46,15 +46,6 @@ export function ProjectDetails({ slug }: ProjectDetailsProps) {
                 {content.ui.demoLabel}
               </a>
             ) : null}
-            {project.links.progress ? (
-              <a
-                href={project.links.progress}
-                className="inline-flex items-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.06] px-4 py-2 text-sm font-semibold text-white/80 hover:bg-white/[0.12] hover:text-white"
-              >
-                <ExternalLink size={16} aria-hidden="true" />
-                {content.ui.progressLabel}
-              </a>
-            ) : null}
             {project.links.bot ? (
               <a
                 href={project.links.bot}

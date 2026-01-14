@@ -23,7 +23,6 @@ export type ProjectItem = {
   links: {
     demo?: string;
     bot?: string;
-    progress?: string;
     github?: string;
   };
 };
@@ -72,7 +71,6 @@ export type LocalizedProfile = {
     availabilityLabel: string;
     caseLabel: string;
     demoLabel: string;
-    progressLabel: string;
     botLabel: string;
     githubLabel: string;
     cvLabel: string;
@@ -83,10 +81,6 @@ export type LocalizedProfile = {
     contactCta: string;
     avatarAlt: string;
     languageSwitchLabel: string;
-    progressTitle: string;
-    progressEmpty: string;
-    progressDownloadLabel: string;
-    progressGroups: Record<string, string>;
     commandPalette: {
       placeholder: string;
       empty: string;
@@ -195,7 +189,6 @@ export const profile: Profile = {
             "Презентация результатов команде.",
           ],
           links: {
-            progress: "/progress",
           },
         },
       ],
@@ -263,7 +256,6 @@ export const profile: Profile = {
         availabilityLabel: "Доступность",
         caseLabel: "Кейс",
         demoLabel: "Demo",
-        progressLabel: "Учебный прогресс",
         botLabel: "Telegram Bot",
         githubLabel: "GitHub",
         cvLabel: "CV",
@@ -274,17 +266,6 @@ export const profile: Profile = {
         contactCta: "Написать",
         avatarAlt: "Аватар",
         languageSwitchLabel: "Язык",
-        progressTitle: "Учебный прогресс",
-        progressEmpty: "Пока файлов нет. Добавьте материалы в папку progress.",
-        progressDownloadLabel: "Скачать",
-        progressGroups: {
-          BSA: "BSA задания",
-          QA: "QA задания",
-          UX_UI: "UX/UI задания",
-          PjM: "Project Management",
-          CbS: "Компьютерная база",
-          C: "C задачи",
-        },
         commandPalette: {
           placeholder: "Введите команду...",
           empty: "Ничего не найдено",
@@ -362,7 +343,6 @@ export const profile: Profile = {
             "Presented findings to a team.",
           ],
           links: {
-            progress: "/progress",
           },
         },
       ],
@@ -430,7 +410,6 @@ export const profile: Profile = {
         availabilityLabel: "Availability",
         caseLabel: "Case",
         demoLabel: "Demo",
-        progressLabel: "Study progress",
         botLabel: "Telegram Bot",
         githubLabel: "GitHub",
         cvLabel: "CV",
@@ -441,17 +420,6 @@ export const profile: Profile = {
         contactCta: "Send a message",
         avatarAlt: "Avatar",
         languageSwitchLabel: "Language",
-        progressTitle: "Study progress",
-        progressEmpty: "No files yet. Drop your materials into the progress folder.",
-        progressDownloadLabel: "Download",
-        progressGroups: {
-          BSA: "BSA tasks",
-          QA: "QA tasks",
-          UX_UI: "UX/UI tasks",
-          PjM: "Project Management",
-          CbS: "Computer basics",
-          C: "C tasks",
-        },
         commandPalette: {
           placeholder: "Type a command...",
           empty: "No results",
@@ -529,7 +497,6 @@ export const profile: Profile = {
             "Natijalarni jamoaga taqdim etish.",
           ],
           links: {
-            progress: "/progress",
           },
         },
       ],
@@ -597,7 +564,6 @@ export const profile: Profile = {
         availabilityLabel: "Mavjudlik",
         caseLabel: "Case",
         demoLabel: "Demo",
-        progressLabel: "O‘quv progressi",
         botLabel: "Telegram Bot",
         githubLabel: "GitHub",
         cvLabel: "CV",
@@ -608,17 +574,6 @@ export const profile: Profile = {
         contactCta: "Yozish",
         avatarAlt: "Avatar",
         languageSwitchLabel: "Til",
-        progressTitle: "O‘quv progressi",
-        progressEmpty: "Hozircha fayl yo‘q. progress papkasiga material qo‘shing.",
-        progressDownloadLabel: "Yuklab olish",
-        progressGroups: {
-          BSA: "BSA topshiriqlari",
-          QA: "QA topshiriqlari",
-          UX_UI: "UX/UI topshiriqlari",
-          PjM: "Project Management",
-          CbS: "Kompyuter asoslari",
-          C: "C topshiriqlari",
-        },
         commandPalette: {
           placeholder: "Buyruq kiriting...",
           empty: "Natija yo‘q",
