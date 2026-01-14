@@ -124,15 +124,15 @@ export const profile: Profile = {
     ru: {
       role: "Студент Business System Analysis (BSA)",
       summary: [
-        "Мотивированный студент School 21 с сильным пониманием ПК и IT-систем.",
-        "Опыт Tribe Master, быстро учусь, внимателен к деталям, владею Excel и Telegram-ботами.",
+        "Студент School 21 и Business System Analysis. Занимаюсь фронтенд-разработкой, UI/UX и созданием Telegram-ботов, а также автоматизацией процессов.",
+        "Имею опыт работы Tribe Master: управление командами, помощь в адаптации и организации процессов.",
       ],
-      status: "Открыт к стажировкам",
+      status: "Студент School 21",
       experience: [
         {
           company: "School 21 - Uzbekistan",
-          title: "Tribe Master / Volunteer",
-          period: "2025 - настоящее время",
+          title: "Tribe Master",
+          period: "2026",
           bullets: [
             "Руководил участниками бассейна и помогал адаптироваться к заданиям.",
             "Координировал командные активности и взаимодействие участников.",
@@ -279,14 +279,14 @@ export const profile: Profile = {
       role: "Business System Analysis (BSA) Student",
       summary: [
         "Motivated School 21 student with solid knowledge of PCs and IT systems.",
-        "Tribe Master volunteer experience, fast learner, detail-focused, skilled in Excel and Telegram bots.",
+        "Tribe Master experience: lead teams, learn fast, detail-oriented, confident with Excel and Telegram bots.",
       ],
       status: "Open to internships",
       experience: [
         {
           company: "School 21 - Uzbekistan",
-          title: "Tribe Master / Volunteer",
-          period: "2025 - Present",
+          title: "Tribe Master",
+          period: "2026",
           bullets: [
             "Led pool participants and helped them adapt to tasks.",
             "Coordinated team activities and collaboration.",
@@ -433,14 +433,14 @@ export const profile: Profile = {
       role: "Business System Analysis (BSA) talaba",
       summary: [
         "School 21da BSA yo‘nalishida o‘qiyotgan motivatsiyali talabaman.",
-        "Tribe Master tajribam bor, tez o‘rganaman, Excel va Telegram botlar bilan ishlayman.",
+        "Tribe Master tajribam bor: jamoa yetaklayman, tez o‘rganaman, Excel va Telegram botlar bilan ishonchli ishlayman.",
       ],
       status: "Stajirovka uchun ochiq",
       experience: [
         {
           company: "School 21 - Uzbekistan",
-          title: "Tribe Master / Volunteer",
-          period: "2025 - hozirgacha",
+          title: "Tribe Master",
+          period: "2026",
           bullets: [
             "Pool ishtirokchilarini yo‘naltirdim va topshiriqlarga moslashtirdim.",
             "Jamoaviy faoliyat va hamkorlikni muvofiqlashtirdim.",

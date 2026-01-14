@@ -9,7 +9,6 @@ import {
   GraduationCap,
   Languages,
   Mail,
-  MapPin,
   MessageSquare,
   Phone,
   Sparkles,
@@ -329,7 +328,7 @@ export default function Home() {
           >
             <Card className="p-6 md:p-8">
               <SectionTitle>{content.ui.detailsTitle}</SectionTitle>
-              <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
                 <div className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-4">
                   <p className="text-xs uppercase tracking-[0.2em] text-white/40">
                     {content.ui.emailLabel}
@@ -362,29 +361,11 @@ export default function Home() {
                     href={profile.links.telegram}
                     target="_blank"
                     rel="noreferrer"
-                  className="mt-3 flex items-center gap-2 text-sm text-white/80 hover:text-white"
+                    className="mt-3 flex items-center gap-2 text-sm text-white/80 hover:text-white"
                   >
                     <MessageSquare size={14} aria-hidden="true" />
                     {content.ui.contactCta}
                   </a>
-                </div>
-                <div className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-4">
-                  <p className="text-xs uppercase tracking-[0.2em] text-white/40">
-                    {content.ui.locationLabel}
-                  </p>
-                  <p className="mt-3 flex items-center gap-2 text-sm text-white/80">
-                    <MapPin size={14} aria-hidden="true" />
-                    {content.location}
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-4">
-                  <p className="text-xs uppercase tracking-[0.2em] text-white/40">
-                    {content.ui.availabilityLabel}
-                  </p>
-                  <p className="mt-3 flex items-center gap-2 text-sm text-white/80">
-                    <Briefcase size={14} aria-hidden="true" />
-                    {content.availability}
-                  </p>
                 </div>
               </div>
             </Card>
