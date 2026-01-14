@@ -39,7 +39,26 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <main>
+      <main className="relative">
+        <div className="mx-auto flex w-full max-w-[1120px] justify-end px-4 pt-6 md:px-6 lg:px-8">
+          <div className="flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] p-1">
+            {profile.localeOptions.map((option) => (
+              <button
+                key={option.key}
+                type="button"
+                onClick={() => setLocale(option.key)}
+                aria-pressed={locale === option.key}
+                className={`rounded-full px-3 py-1 text-xs font-semibold transition ${
+                  locale === option.key
+                    ? "bg-white/12 text-white"
+                    : "text-white/60 hover:text-white"
+                }`}
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+        </div>
         <BentoGrid>
           <motion.div
             className="col-span-12 md:col-span-5 lg:col-span-4"
@@ -47,7 +66,7 @@ export default function Home() {
           >
             <Card className="flex h-full flex-col justify-between gap-6 p-6">
               <div className="flex items-center gap-4">
-                <div className="relative h-16 w-16 overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.04]">
+                <div className="relative h-28 w-28 overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.04]">
                   <img
                     src={profile.avatar}
                     alt={content.ui.avatarAlt}
@@ -77,31 +96,7 @@ export default function Home() {
           >
             <Card className="flex h-full flex-col justify-between gap-6 p-6 md:p-8">
               <div className="space-y-4">
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <SectionTitle>{content.ui.introTitle}</SectionTitle>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs uppercase tracking-[0.2em] text-white/40">
-                      {content.ui.languageSwitchLabel}
-                    </span>
-                    <div className="flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] p-1">
-                      {profile.localeOptions.map((option) => (
-                        <button
-                          key={option.key}
-                          type="button"
-                          onClick={() => setLocale(option.key)}
-                          aria-pressed={locale === option.key}
-                          className={`rounded-full px-3 py-1 text-xs font-semibold transition ${
-                            locale === option.key
-                              ? "bg-white/12 text-white"
-                              : "text-white/60 hover:text-white"
-                          }`}
-                        >
-                          {option.label}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                <SectionTitle>{content.ui.introTitle}</SectionTitle>
                 <div className="space-y-3 text-lg leading-relaxed text-[rgba(255,255,255,0.88)]">
                   <p>{content.summary[0]}</p>
                   <p className="text-[rgba(255,255,255,0.62)]">
