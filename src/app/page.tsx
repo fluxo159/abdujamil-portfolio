@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import {
+  Award,
   Briefcase,
   ExternalLink,
   FileDown,
@@ -276,6 +277,35 @@ export default function Home() {
                       <p className="text-xs text-white/55">{item.note}</p>
                     ) : null}
                   </div>
+                ))}
+              </div>
+            </Card>
+          </motion.section>
+
+          <motion.section
+            id="certificates"
+            className="col-span-12 md:col-span-6 lg:col-span-4"
+            {...motionProps(0.28)}
+          >
+            <Card className="h-full p-6">
+              <SectionTitle>{content.ui.certificatesTitle}</SectionTitle>
+              <div className="mt-4 space-y-3">
+                {content.certificates.map((certificate) => (
+                  <a
+                    key={certificate.title}
+                    href={certificate.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-between rounded-xl border border-white/[0.06] bg-white/[0.03] px-3 py-2 text-sm text-white/75 transition hover:bg-white/[0.06] hover:text-white"
+                  >
+                    <div>
+                      <p className="font-medium">{certificate.title}</p>
+                      <p className="text-xs text-white/50">
+                        {certificate.issuer} • {certificate.year}
+                      </p>
+                    </div>
+                    <Award size={14} aria-hidden="true" />
+                  </a>
                 ))}
               </div>
             </Card>

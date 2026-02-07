@@ -34,6 +34,13 @@ export type EducationItem = {
   note?: string;
 };
 
+export type CertificateItem = {
+  title: string;
+  issuer: string;
+  year: string;
+  url: string;
+};
+
 export type CommandPaletteItem = {
   label: string;
   href: string;
@@ -49,6 +56,7 @@ export type LocalizedProfile = {
   experience: ExperienceItem[];
   projects: ProjectItem[];
   education: EducationItem[];
+  certificates: CertificateItem[];
   tools: string[];
   languages: string[];
   location: string;
@@ -61,6 +69,7 @@ export type LocalizedProfile = {
     projectsTitle: string;
     projectCountLabel: string;
     educationTitle: string;
+    certificatesTitle: string;
     toolsTitle: string;
     languagesTitle: string;
     detailsTitle: string;
@@ -214,6 +223,20 @@ export const profile: Profile = {
           note: "Изучение HTML, CSS, JavaScript.",
         },
       ],
+      certificates: [
+        {
+          title: "Game Jam Certificate",
+          issuer: "Game Jam",
+          year: "2026",
+          url: "/game-jam-certificate.pdf",
+        },
+        {
+          title: "ProWeb Certificate",
+          issuer: "ProWeb",
+          year: "2025",
+          url: "/proweb-certificate.pdf",
+        },
+      ],
       tools: [
         "Microsoft Word / Google Docs",
         "Microsoft Excel / Google Sheets",
@@ -235,6 +258,7 @@ export const profile: Profile = {
       commandPalette: [
         { label: "Проекты", href: "#projects" },
         { label: "Обо мне", href: "#about" },
+        { label: "Сертификаты", href: "#certificates" },
         { label: "Контакты", href: "#contact" },
         { label: "GitHub", href: "https://github.com/fluxo159", external: true },
         { label: "CV", href: "/cv.pdf", external: true },
@@ -246,6 +270,7 @@ export const profile: Profile = {
         projectsTitle: "Проекты",
         projectCountLabel: "{count} проекта",
         educationTitle: "Образование",
+        certificatesTitle: "Сертификаты",
         toolsTitle: "Инструменты",
         languagesTitle: "Языки",
         detailsTitle: "Контакты",
@@ -368,6 +393,20 @@ export const profile: Profile = {
           note: "HTML, CSS, JavaScript fundamentals.",
         },
       ],
+      certificates: [
+        {
+          title: "Game Jam Certificate",
+          issuer: "Game Jam",
+          year: "2026",
+          url: "/game-jam-certificate.pdf",
+        },
+        {
+          title: "ProWeb Certificate",
+          issuer: "ProWeb",
+          year: "2025",
+          url: "/proweb-certificate.pdf",
+        },
+      ],
       tools: [
         "Microsoft Word / Google Docs",
         "Microsoft Excel / Google Sheets",
@@ -389,6 +428,7 @@ export const profile: Profile = {
       commandPalette: [
         { label: "Projects", href: "#projects" },
         { label: "About", href: "#about" },
+        { label: "Certificates", href: "#certificates" },
         { label: "Contact", href: "#contact" },
         { label: "GitHub", href: "https://github.com/fluxo159", external: true },
         { label: "CV", href: "/cv.pdf", external: true },
@@ -400,6 +440,7 @@ export const profile: Profile = {
         projectsTitle: "Projects",
         projectCountLabel: "{count} case studies",
         educationTitle: "Education",
+        certificatesTitle: "Certificates",
         toolsTitle: "Tools",
         languagesTitle: "Languages",
         detailsTitle: "Contact",
@@ -522,6 +563,20 @@ export const profile: Profile = {
           note: "HTML, CSS, JavaScript asoslari.",
         },
       ],
+      certificates: [
+        {
+          title: "Game Jam Certificate",
+          issuer: "Game Jam",
+          year: "2026",
+          url: "/game-jam-certificate.pdf",
+        },
+        {
+          title: "ProWeb Certificate",
+          issuer: "ProWeb",
+          year: "2025",
+          url: "/proweb-certificate.pdf",
+        },
+      ],
       tools: [
         "Microsoft Word / Google Docs",
         "Microsoft Excel / Google Sheets",
@@ -543,6 +598,7 @@ export const profile: Profile = {
       commandPalette: [
         { label: "Loyihalar", href: "#projects" },
         { label: "Men haqimda", href: "#about" },
+        { label: "Sertifikatlar", href: "#certificates" },
         { label: "Kontaktlar", href: "#contact" },
         { label: "GitHub", href: "https://github.com/fluxo159", external: true },
         { label: "CV", href: "/cv.pdf", external: true },
@@ -554,6 +610,7 @@ export const profile: Profile = {
         projectsTitle: "Loyihalar",
         projectCountLabel: "{count} loyiha",
         educationTitle: "Ta'lim",
+        certificatesTitle: "Sertifikatlar",
         toolsTitle: "Asboblar",
         languagesTitle: "Tillar",
         detailsTitle: "Kontaktlar",
