@@ -119,7 +119,7 @@ export const profile: Profile = {
     telegram: "https://t.me/Jamilf1",
     github: "https://github.com/fluxo159",
     email: "aydarkurbanbaev1406@gmail.com",
-    phone: "+998-90-870-50-11",
+    phone: "+998-93-222-40-99",
     cvUrl: "/Abdujamil.pdf",
   },
   stack: ["HTML", "CSS", "React", "JavaScript", "Vue", "Vite", "Figma"],
