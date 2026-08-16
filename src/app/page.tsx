@@ -1,407 +1,380 @@
 "use client";
 
+import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
-  Award,
-  Briefcase,
-  ExternalLink,
   FileDown,
   Github,
-  GraduationCap,
-  Languages,
   Mail,
   MessageSquare,
   Phone,
-  Sparkles,
+  MapPin,
+  ExternalLink,
+  GraduationCap,
+  Briefcase,
+  Layers,
   Wrench,
+  Globe,
+  UserCheck,
 } from "lucide-react";
-import { BentoGrid } from "@/components/BentoGrid";
-import { Card } from "@/components/Card";
-import { Chip } from "@/components/Chip";
-import { SectionTitle } from "@/components/SectionTitle";
 import { useLanguage } from "@/components/LanguageProvider";
 import { profile } from "@/data/profile";
 
 export default function Home() {
   const { content, locale, setLocale } = useLanguage();
   const reduceMotion = useReducedMotion();
+
   const motionProps = (delay = 0) =>
     reduceMotion
       ? {}
       : {
-          initial: { opacity: 0, y: 10 },
+          initial: { opacity: 0, y: 14 },
           whileInView: { opacity: 1, y: 0 },
-          transition: { duration: 0.4, delay },
-          viewport: { once: true, margin: "-10%" },
+          transition: { duration: 0.45, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+          viewport: { once: true, margin: "-5%" },
         };
 
   return (
-    <div className="min-h-screen">
-      <main className="relative">
-        <div className="mx-auto flex w-full max-w-[1120px] justify-end px-4 pt-6 md:px-6 lg:px-8">
-          <div className="flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] p-1">
-            {profile.localeOptions.map((option) => (
-              <button
-                key={option.key}
-                type="button"
-                onClick={() => setLocale(option.key)}
-                aria-pressed={locale === option.key}
-                className={`rounded-full px-3 py-1 text-xs font-semibold transition ${
-                  locale === option.key
-                    ? "bg-white/12 text-white"
-                    : "text-white/60 hover:text-white"
-                }`}
-              >
-                {option.label}
-              </button>
-            ))}
+    <div className="min-h-screen bg-[#080809] text-white font-sans py-8 md:py-14 px-4 sm:px-6 lg:px-8 flex justify-center">
+      <div className="w-full max-w-[960px] space-y-5">
+        
+        {/* ════════════════════════════════════════════════════════════════
+            ROW 1: AVATAR CARD (LEFT) + BIO & INTERESTS (RIGHT)
+        ════════════════════════════════════════════════════════════════ */}
+        <motion.div className="flex flex-col sm:flex-row gap-5 items-stretch" {...motionProps(0)}>
+          
+          {/* Avatar Container - Fixed Dimensions & Perfect Centered Photo */}
+          <div className="w-full sm:w-[250px] md:w-[270px] h-[270px] md:h-[280px] shrink-0 bg-[#eae6df] rounded-[28px] p-3 flex items-center justify-center border border-white/10 shadow-2xl">
+            <div className="w-full h-full rounded-[20px] overflow-hidden bg-[#dedad0] flex items-center justify-center relative">
+              <img
+                src={profile.avatar}
+                alt={content.ui.avatarAlt}
+                className="w-full h-full object-cover object-center contrast-105"
+              />
+            </div>
           </div>
-        </div>
-        <BentoGrid>
-          <motion.div
-            className="col-span-12 md:col-span-5 lg:col-span-4"
-            {...motionProps(0)}
-          >
-            <Card className="flex h-full flex-col justify-between gap-6 p-6">
-              <div className="flex items-center gap-4">
-                <div className="relative h-28 w-28 overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.04]">
-                  <img
-                    src={profile.avatar}
-                    alt={content.ui.avatarAlt}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="text-sm text-[rgba(255,255,255,0.62)]">
-                    {content.role}
-                  </p>
-                  <h1 className="text-xl font-semibold text-[rgba(255,255,255,0.9)]">
-                    {profile.name}
-                  </h1>
-                </div>
-              </div>
-              <Chip className="w-fit">
-                <Sparkles size={14} aria-hidden="true" />
-                {content.status}
-              </Chip>
-            </Card>
-          </motion.div>
 
-          <motion.section
-            id="about"
-            className="col-span-12 md:col-span-7 lg:col-span-8"
-            {...motionProps(0.05)}
-          >
-            <Card className="flex h-full flex-col justify-between gap-6 p-6 md:p-8">
-              <div className="space-y-4">
-                <SectionTitle>{content.ui.introTitle}</SectionTitle>
-                <div className="space-y-3 text-lg leading-relaxed text-[rgba(255,255,255,0.88)]">
-                  <p>{content.summary[0]}</p>
-                  <p className="text-[rgba(255,255,255,0.62)]">
-                    {content.summary[1]}
-                  </p>
+          {/* Bio & Interests Column */}
+          <div className="flex-1 min-w-0 flex flex-col gap-4 justify-between">
+            {/* Bio Box */}
+            <div className="bg-[#141416] border border-[#222226] rounded-[28px] p-6 flex-1 flex flex-col justify-between">
+              <div className="flex items-center justify-between gap-3 mb-3">
+                <span className="text-xs font-semibold text-zinc-400">
+                  {content.status}
+                </span>
+                
+                {/* Language Switcher */}
+                <div className="flex items-center gap-1 bg-[#1e1e22] border border-[#2b2b32] p-1 rounded-full shrink-0">
+                  {profile.localeOptions.map((opt) => (
+                    <button
+                      key={opt.key}
+                      onClick={() => setLocale(opt.key)}
+                      className={`px-3 py-1 text-xs font-bold rounded-full transition-all cursor-pointer ${
+                        locale === opt.key
+                          ? "bg-white text-black shadow"
+                          : "text-zinc-400 hover:text-white"
+                      }`}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
                 </div>
               </div>
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href={profile.links.cvUrl}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.18] bg-white/[0.12] px-4 py-2 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(0,0,0,0.35)] transition hover:bg-white/[0.18] hover:shadow-[0_16px_36px_rgba(0,0,0,0.4)]"
-                >
-                  <FileDown size={16} aria-hidden="true" />
-                  {content.ui.cvLabel}
-                </a>
-                <a
-                  href={profile.links.telegram}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.16] bg-white/[0.06] px-4 py-2 text-sm font-semibold text-white/90 shadow-[0_10px_24px_rgba(0,0,0,0.3)] transition hover:bg-white/[0.12] hover:text-white"
-                >
-                  <MessageSquare size={16} aria-hidden="true" />
-                  {content.ui.telegramLabel}
-                </a>
-                <a
-                  href={profile.links.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/[0.16] bg-white/[0.06] px-4 py-2 text-sm font-semibold text-white/90 shadow-[0_10px_24px_rgba(0,0,0,0.3)] transition hover:bg-white/[0.12] hover:text-white"
-                >
-                  <Github size={16} aria-hidden="true" />
-                  {content.ui.githubLabel}
-                </a>
-              </div>
-            </Card>
-          </motion.section>
 
-          <motion.section
-            className="col-span-12 md:col-span-6 lg:col-span-4"
-            {...motionProps(0.1)}
-          >
-            <Card className="h-full p-6">
-              <SectionTitle>{content.ui.stackTitle}</SectionTitle>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {profile.stack.map((item) => (
-                  <Chip key={item}>{item}</Chip>
-                ))}
-              </div>
-            </Card>
-          </motion.section>
+              <p className="text-zinc-200 text-sm sm:text-base leading-relaxed font-sans font-normal my-auto">
+                {content.summary[0]}
+              </p>
 
-          {content.experience.slice(0, 2).map((item, index) => (
-            <motion.section
-              key={item.company}
-              className="col-span-12 md:col-span-6 lg:col-span-4"
-              {...motionProps(0.12 + index * 0.05)}
+              <div className="mt-4 pt-3 border-t border-[#222226] flex items-center justify-between text-xs text-zinc-400">
+                <span className="font-bold text-white text-sm">{profile.name}</span>
+                <span className="text-xs text-zinc-400">{content.role.split("|")[0].trim()}</span>
+              </div>
+            </div>
+
+            {/* Interests Box */}
+            <div className="bg-[#141416] border border-[#222226] rounded-[22px] px-5 py-3.5 flex flex-wrap items-center gap-3.5">
+              <span className="text-sm font-bold text-white tracking-wide shrink-0">
+                Interests
+              </span>
+              <div className="h-5 w-[1px] bg-[#2a2a30] hidden sm:block" />
+              <div className="flex flex-wrap gap-2 flex-1 items-center">
+                <span className="px-3.5 py-1.5 rounded-xl bg-[#202024] border border-[#2e2e34] text-xs text-zinc-200 font-medium flex items-center gap-2">
+                  🎮 GameDev (Godot)
+                </span>
+                <span className="px-3.5 py-1.5 rounded-xl bg-[#202024] border border-[#2e2e34] text-xs text-zinc-200 font-medium flex items-center gap-2">
+                  🎨 Pixel Art (Aseprite)
+                </span>
+                <span className="px-3.5 py-1.5 rounded-xl bg-[#202024] border border-[#2e2e34] text-xs text-zinc-200 font-medium flex items-center gap-2">
+                  📊 BSA
+                </span>
+                <span className="px-3.5 py-1.5 rounded-xl bg-[#202024] border border-[#2e2e34] text-xs text-zinc-200 font-medium flex items-center gap-2">
+                  💻 Frontend
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </motion.div>
+
+        {/* ════════════════════════════════════════════════════════════════
+            ROW 2: EXPERIENCE CARDS (2 EQUAL COLUMNS)
+        ════════════════════════════════════════════════════════════════ */}
+        <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-5" {...motionProps(0.06)}>
+          {content.experience.slice(0, 2).map((exp, idx) => (
+            <div
+              key={`${exp.company}-${idx}`}
+              className="bg-[#141416] border border-[#222226] rounded-[28px] p-6 flex flex-col justify-between hover:border-[#33333a] transition-all"
             >
-              <Card className="flex h-full flex-col gap-4 p-6">
-                <div className="flex items-start justify-between gap-4">
+              <div>
+                <div className="flex items-start justify-between gap-3 mb-1">
                   <div>
-                    <SectionTitle>{content.ui.experienceTitle}</SectionTitle>
-                    <h4 className="mt-3 text-lg font-semibold text-white/90">
-                      {item.title}
-                    </h4>
-                    <p className="text-sm text-white/60">{item.company}</p>
+                    <h3 className="text-base md:text-lg font-bold text-white leading-snug">
+                      {exp.company}
+                    </h3>
+                    <p className="text-xs font-semibold text-zinc-400 mt-0.5">
+                      {exp.title}
+                    </p>
                   </div>
-                  <span className="text-xs text-white/50">{item.period}</span>
+                  <span className="px-3 py-1 rounded-xl bg-[#202024] border border-[#2e2e34] text-xs font-semibold text-zinc-300 shrink-0">
+                    {exp.period}
+                  </span>
                 </div>
-                <ul className="space-y-2 text-sm text-white/70">
-                  {item.bullets.map((bullet) => (
-                    <li key={bullet} className="leading-relaxed">
-                      {bullet}
+
+                <div className="h-[1px] bg-[#222226] my-4" />
+
+                <ul className="space-y-2 text-xs md:text-sm text-zinc-300 leading-relaxed">
+                  {exp.bullets.map((bullet, bi) => (
+                    <li key={bi} className="flex items-start gap-2">
+                      <span className="text-zinc-500 shrink-0 mt-0.5">•</span>
+                      <span>{bullet}</span>
                     </li>
                   ))}
                 </ul>
-              </Card>
-            </motion.section>
+              </div>
+            </div>
           ))}
+        </motion.div>
 
-          <motion.section
-            id="projects"
-            className="col-span-12"
-            {...motionProps(0.2)}
-          >
-            <Card className="p-6 md:p-8">
-              <div className="flex items-center justify-between">
-                <SectionTitle>{content.ui.projectsTitle}</SectionTitle>
-                <span className="text-xs text-white/50">
-                  {content.ui.projectCountLabel.replace(
-                    "{count}",
-                    String(content.projects.length)
-                  )}
+        {/* ════════════════════════════════════════════════════════════════
+            ROW 3: TECH STACK, TOOLS, LANGUAGES (LEFT) + EDUCATION (RIGHT)
+        ════════════════════════════════════════════════════════════════ */}
+        <motion.div className="grid grid-cols-1 md:grid-cols-12 gap-5" {...motionProps(0.09)}>
+          
+          {/* Left Column (Stack, Tools, Languages Stacked) */}
+          <div className="md:col-span-6 flex flex-col gap-4 justify-between">
+            {/* Tech Stack */}
+            <div className="bg-[#141416] border border-[#222226] rounded-[22px] p-4.5 flex items-center gap-4">
+              <span className="text-xs md:text-sm font-bold text-white tracking-wide shrink-0 w-28 md:w-32 flex items-center gap-2">
+                <Layers size={16} className="text-blue-400" />
+                Tech Stack
+              </span>
+              <div className="h-5 w-[1px] bg-[#2a2a30] hidden sm:block" />
+              <div className="flex flex-wrap gap-1.5 flex-1">
+                {profile.stack.slice(0, 8).map((item) => (
+                  <span
+                    key={item}
+                    className="px-2.5 py-1 rounded-lg bg-[#202024] border border-[#2e2e34] text-xs text-zinc-200 font-medium"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Tools */}
+            <div className="bg-[#141416] border border-[#222226] rounded-[22px] p-4.5 flex items-center gap-4">
+              <span className="text-xs md:text-sm font-bold text-white tracking-wide shrink-0 w-28 md:w-32 flex items-center gap-2">
+                <Wrench size={16} className="text-purple-400" />
+                Tools
+              </span>
+              <div className="h-5 w-[1px] bg-[#2a2a30] hidden sm:block" />
+              <div className="flex flex-wrap gap-1.5 flex-1">
+                {content.tools.slice(0, 5).map((tool) => (
+                  <span
+                    key={tool}
+                    className="px-2.5 py-1 rounded-lg bg-[#202024] border border-[#2e2e34] text-xs text-zinc-200 font-medium"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Languages */}
+            <div className="bg-[#141416] border border-[#222226] rounded-[22px] p-4.5 flex items-center gap-4">
+              <span className="text-xs md:text-sm font-bold text-white tracking-wide shrink-0 w-28 md:w-32 flex items-center gap-2">
+                <Globe size={16} className="text-emerald-400" />
+                Languages
+              </span>
+              <div className="h-5 w-[1px] bg-[#2a2a30] hidden sm:block" />
+              <div className="flex flex-wrap gap-2 flex-1">
+                <span className="px-3 py-1 rounded-xl bg-[#202024] border border-[#2e2e34] text-xs text-zinc-200 font-medium flex items-center gap-1.5">
+                  🇺🇿 Uzbek
+                </span>
+                <span className="px-3 py-1 rounded-xl bg-[#202024] border border-[#2e2e34] text-xs text-zinc-200 font-medium flex items-center gap-1.5">
+                  🇷🇺 Russian
+                </span>
+                <span className="px-3 py-1 rounded-xl bg-[#202024] border border-[#2e2e34] text-xs text-zinc-200 font-medium flex items-center gap-1.5">
+                  🇰🇿 Kazakh
+                </span>
+                <span className="px-3 py-1 rounded-xl bg-[#202024] border border-[#2e2e34] text-xs text-zinc-200 font-medium flex items-center gap-1.5">
+                  🤟 CIS Sign
                 </span>
               </div>
-              <div className="mt-6 grid gap-5 md:grid-cols-2">
-                {content.projects.map((project) => (
-                  <article
-                    key={project.slug}
-                    className="group rounded-[20px] border border-white/[0.06] bg-white/[0.02] p-4 transition hover:bg-white/[0.04]"
-                  >
-                    <div className="flex items-start justify-between gap-3">
+            </div>
+          </div>
+
+          {/* Right Column (Tall Education Box) */}
+          <div className="md:col-span-6 bg-[#141416] border border-[#222226] rounded-[28px] p-6 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2.5 mb-4">
+                <GraduationCap size={18} className="text-blue-400" />
+                <h3 className="text-xs md:text-sm font-bold text-white tracking-wide uppercase">
+                  {content.ui.educationTitle}
+                </h3>
+              </div>
+
+              <div className="space-y-4">
+                {content.education.map((edu, idx) => (
+                  <div key={edu.title} className="space-y-1">
+                    <div className="flex items-start justify-between gap-2">
                       <div>
-                        <h4 className="text-base font-semibold text-white/90">
-                          {project.title}
+                        <h4 className="text-sm font-bold text-white">
+                          {edu.title}
                         </h4>
-                        <p className="mt-2 text-sm text-white/60">
-                          {project.description}
-                        </p>
+                        <p className="text-xs text-zinc-400">{edu.place}</p>
                       </div>
-                      <div className="h-6" aria-hidden="true" />
-                    </div>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <Chip key={tag}>{tag}</Chip>
-                      ))}
-                    </div>
-                    <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-white/60">
-                      <span className="inline-flex items-center gap-1">
-                        <Briefcase size={14} aria-hidden="true" />
-                        {project.stack.join(" / ")}
+                      <span className="px-2.5 py-1 rounded-xl bg-[#202024] border border-[#2e2e34] text-xs font-semibold text-zinc-300 shrink-0">
+                        {edu.period}
                       </span>
                     </div>
-                    <div className="mt-4 flex flex-wrap gap-3 text-sm">
-                      {project.links.demo ? (
-                        <a
-                          href={project.links.demo}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-2 text-white/70 transition hover:text-white"
-                        >
-                          <ExternalLink size={14} aria-hidden="true" />
-                          {content.ui.demoLabel}
-                        </a>
-                      ) : null}
-                      {project.links.bot ? (
-                        <a
-                          href={project.links.bot}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-2 rounded-full border border-white/[0.16] bg-white/[0.06] px-3 py-1.5 text-xs font-semibold text-white/90 shadow-[0_10px_24px_rgba(0,0,0,0.28)] transition hover:bg-white/[0.12] hover:text-white"
-                        >
-                          <MessageSquare size={14} aria-hidden="true" />
-                          {content.ui.botLabel}
-                        </a>
-                      ) : null}
-                      {project.links.github ? (
-                        <a
-                          href={project.links.github}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-2 rounded-full border border-white/[0.16] bg-white/[0.08] px-3 py-1.5 text-xs font-semibold text-white/90 shadow-[0_10px_24px_rgba(0,0,0,0.28)] transition hover:bg-white/[0.14] hover:text-white"
-                        >
-                          <Github size={14} aria-hidden="true" />
-                          {content.ui.githubLabel}
-                        </a>
-                      ) : null}
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </Card>
-          </motion.section>
 
-          <motion.section
-            className="col-span-12 md:col-span-6 lg:col-span-4"
-            {...motionProps(0.25)}
-          >
-            <Card className="h-full p-6">
-              <SectionTitle>{content.ui.educationTitle}</SectionTitle>
-              <div className="mt-4 space-y-4">
-                {content.education.map((item) => (
-                  <div key={item.title} className="space-y-1">
-                    <div className="flex items-center gap-2 text-sm text-white/80">
-                      <GraduationCap size={14} aria-hidden="true" />
-                      <span className="font-medium">{item.title}</span>
-                    </div>
-                    <p className="text-xs text-white/55">{item.place}</p>
-                    <p className="text-xs text-white/45">{item.period}</p>
-                    {item.note ? (
-                      <p className="text-xs text-white/55">{item.note}</p>
-                    ) : null}
-                  </div>
-                ))}
-              </div>
-            </Card>
-          </motion.section>
-
-          <motion.section
-            id="certificates"
-            className="col-span-12 md:col-span-6 lg:col-span-4"
-            {...motionProps(0.28)}
-          >
-            <Card className="h-full p-6">
-              <SectionTitle>{content.ui.certificatesTitle}</SectionTitle>
-              <div className="mt-4 space-y-3">
-                {content.certificates.map((certificate) => (
-                  <a
-                    key={certificate.title}
-                    href={certificate.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center justify-between rounded-xl border border-white/[0.06] bg-white/[0.03] px-3 py-2 text-sm text-white/75 transition hover:bg-white/[0.06] hover:text-white"
-                  >
-                    <div>
-                      <p className="font-medium">{certificate.title}</p>
-                      <p className="text-xs text-white/50">
-                        {certificate.issuer} • {certificate.year}
+                    {edu.note && (
+                      <p className="text-xs text-zinc-400 leading-relaxed pt-0.5">
+                        {edu.note}
                       </p>
-                    </div>
-                    <Award size={14} aria-hidden="true" />
-                  </a>
-                ))}
-              </div>
-            </Card>
-          </motion.section>
+                    )}
 
-          <motion.section
-            className="col-span-12 md:col-span-6 lg:col-span-4"
-            {...motionProps(0.3)}
-          >
-            <Card className="h-full p-6">
-              <SectionTitle>{content.ui.toolsTitle}</SectionTitle>
-              <div className="mt-4 space-y-3">
-                {content.tools.map((tool) => (
-                  <div
-                    key={tool}
-                    className="flex items-center justify-between rounded-xl border border-white/[0.06] bg-white/[0.03] px-3 py-2 text-sm text-white/70"
-                  >
-                    <span>{tool}</span>
-                    <Wrench size={14} aria-hidden="true" />
+                    {idx < content.education.length - 1 && (
+                      <div className="h-[1px] bg-[#222226] mt-3" />
+                    )}
                   </div>
                 ))}
               </div>
-            </Card>
-          </motion.section>
+            </div>
+          </div>
 
-          <motion.section
-            className="col-span-12 md:col-span-6 lg:col-span-4"
-            {...motionProps(0.32)}
-          >
-            <Card className="h-full p-6">
-              <SectionTitle>{content.ui.languagesTitle}</SectionTitle>
-              <div className="mt-4 space-y-3">
-                {content.languages.map((language) => (
-                  <div
-                    key={language}
-                    className="flex items-center justify-between rounded-xl border border-white/[0.06] bg-white/[0.03] px-3 py-2 text-sm text-white/70"
-                  >
-                    <span>{language}</span>
-                    <Languages size={14} aria-hidden="true" />
-                  </div>
-                ))}
-              </div>
-            </Card>
-          </motion.section>
+        </motion.div>
 
-          <motion.section
-            id="contact"
-            className="col-span-12"
-            {...motionProps(0.35)}
-          >
-            <Card className="p-6 md:p-8">
-              <SectionTitle>{content.ui.detailsTitle}</SectionTitle>
-              <div className="mt-6 grid gap-4 md:grid-cols-2">
-                <div className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-4">
-                  <p className="text-xs uppercase tracking-[0.2em] text-white/40">
-                    {content.ui.emailLabel}
-                  </p>
-                  <a
-                    href={`mailto:${profile.links.email}`}
-                    className="mt-3 flex items-center gap-2 text-sm text-white/80 hover:text-white"
-                  >
-                    <Mail size={14} aria-hidden="true" />
-                    {profile.links.email}
-                  </a>
-                </div>
-                <div className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-4">
-                  <p className="text-xs uppercase tracking-[0.2em] text-white/40">
-                    {content.ui.phoneLabel}
-                  </p>
-                  <a
-                    href={`tel:${profile.links.phone.replace(/[^\d+]/g, "")}`}
-                    className="mt-3 flex items-center gap-2 text-sm text-white/80 hover:text-white"
-                  >
-                    <Phone size={14} aria-hidden="true" />
-                    {profile.links.phone}
-                  </a>
-                </div>
-                <div className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-4">
-                  <p className="text-xs uppercase tracking-[0.2em] text-white/40">
-                    {content.ui.telegramLabel}
-                  </p>
-                  <a
-                    href={profile.links.telegram}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-3 flex items-center gap-2 text-sm text-white/80 hover:text-white"
-                  >
-                    <MessageSquare size={14} aria-hidden="true" />
-                    {content.ui.contactCta}
-                  </a>
-                </div>
-              </div>
-            </Card>
-          </motion.section>
-        </BentoGrid>
-      </main>
+        {/* ════════════════════════════════════════════════════════════════
+            ROW 4: PORTFOLIO / PROJECTS BAR (FULL WIDTH)
+        ════════════════════════════════════════════════════════════════ */}
+        <motion.div
+          id="projects"
+          className="bg-[#141416] border border-[#222226] rounded-[22px] p-5 flex flex-wrap items-center gap-4"
+          {...motionProps(0.12)}
+        >
+          <span className="text-xs md:text-sm font-bold text-white tracking-wide shrink-0 w-28 md:w-32 flex items-center gap-2">
+            <Briefcase size={16} className="text-amber-400" />
+            Portfolio
+          </span>
+          <div className="h-5 w-[1px] bg-[#2a2a30] hidden sm:block" />
+
+          <div className="flex flex-wrap gap-2.5 flex-1 items-center">
+            {content.projects.map((project) => (
+              <a
+                key={project.slug}
+                href={project.links.bot || project.links.github || project.links.demo || "#"}
+                target="_blank"
+                rel="noreferrer"
+                className="px-4 py-2 rounded-xl bg-[#202024] border border-[#2e2e34] hover:bg-[#2a2a30] hover:border-zinc-500 transition-all text-xs md:text-sm font-bold text-white flex items-center gap-2 cursor-pointer"
+              >
+                <span>{project.title}</span>
+                <ExternalLink size={13} className="text-zinc-400" />
+              </a>
+            ))}
+
+            <a
+              href={profile.links.github}
+              target="_blank"
+              rel="noreferrer"
+              className="px-4 py-2 rounded-xl bg-[#202024] border border-[#2e2e34] hover:bg-[#2a2a30] text-xs md:text-sm font-bold text-white flex items-center gap-2 cursor-pointer"
+            >
+              <Github size={14} />
+              <span>GitHub</span>
+            </a>
+
+            <a
+              href={profile.links.cvUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="px-4 py-2 rounded-xl bg-white text-black font-bold text-xs md:text-sm hover:bg-zinc-200 transition-colors flex items-center gap-2 cursor-pointer sm:ml-auto"
+            >
+              <FileDown size={14} />
+              <span>CV</span>
+            </a>
+          </div>
+        </motion.div>
+
+        {/* ════════════════════════════════════════════════════════════════
+            ROW 5: DETAILS / CONTACT BAR (FULL WIDTH)
+        ════════════════════════════════════════════════════════════════ */}
+        <motion.div
+          id="contact"
+          className="bg-[#141416] border border-[#222226] rounded-[22px] p-5 flex flex-wrap items-center gap-4"
+          {...motionProps(0.15)}
+        >
+          <span className="text-xs md:text-sm font-bold text-white tracking-wide shrink-0 w-28 md:w-32 flex items-center gap-2">
+            <UserCheck size={16} className="text-emerald-400" />
+            Details
+          </span>
+          <div className="h-5 w-[1px] bg-[#2a2a30] hidden sm:block" />
+
+          <div className="flex flex-wrap gap-2.5 flex-1 items-center text-xs md:text-sm font-medium">
+            <span className="px-4 py-2 rounded-xl bg-[#202024] border border-[#2e2e34] text-zinc-200">
+              🎓 Student @ School 21 (BSA)
+            </span>
+
+            <a
+              href={`mailto:${profile.links.email}`}
+              className="px-4 py-2 rounded-xl bg-[#202024] border border-[#2e2e34] hover:bg-[#2a2a30] text-zinc-200 hover:text-white flex items-center gap-2 transition-all cursor-pointer"
+            >
+              <Mail size={13} className="text-zinc-400" />
+              <span>{profile.links.email}</span>
+            </a>
+
+            <a
+              href={`tel:${profile.links.phone.replace(/[^\d+]/g, "")}`}
+              className="px-4 py-2 rounded-xl bg-[#202024] border border-[#2e2e34] hover:bg-[#2a2a30] text-zinc-200 hover:text-white flex items-center gap-2 transition-all cursor-pointer"
+            >
+              <Phone size={13} className="text-zinc-400" />
+              <span>{profile.links.phone}</span>
+            </a>
+
+            <a
+              href={profile.links.telegram}
+              target="_blank"
+              rel="noreferrer"
+              className="px-4 py-2 rounded-xl bg-[#202024] border border-[#2e2e34] hover:bg-[#2a2a30] text-zinc-200 hover:text-white flex items-center gap-2 transition-all cursor-pointer"
+            >
+              <MessageSquare size={13} className="text-blue-400" />
+              <span>Telegram (@Jamilf1)</span>
+            </a>
+
+            <span className="px-4 py-2 rounded-xl bg-[#202024] border border-[#2e2e34] text-zinc-200 flex items-center gap-2 sm:ml-auto">
+              <MapPin size={13} className="text-emerald-400" />
+              <span>Tashkent, Uzbekistan</span>
+            </span>
+          </div>
+        </motion.div>
+
+        {/* Footer */}
+        <footer className="pt-3 pb-2 flex items-center justify-between text-zinc-500 text-xs font-medium">
+          <span>© {new Date().getFullYear()} {profile.name}</span>
+          <span>Sleek Dark Bento Portfolio</span>
+        </footer>
+
+      </div>
     </div>
   );
 }

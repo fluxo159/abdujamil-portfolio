@@ -122,7 +122,7 @@ export const profile: Profile = {
     phone: "+998-93-222-40-99",
     cvUrl: "/Abdujamil.pdf",
   },
-  stack: ["HTML", "CSS", "React", "JavaScript", "Vue", "Vite", "Figma"],
+  stack: ["HTML", "CSS", "React", "JavaScript", "TypeScript", "TailwindCSS", "Leaflet GIS", "Vue", "Vite", "Figma", "SQL", "Godot", "Aseprite", "Python", "C"],
   defaultLocale: "ru",
   localeOptions: [
     { key: "ru", label: "RU" },
@@ -131,27 +131,116 @@ export const profile: Profile = {
   ],
   locales: {
     ru: {
-      role: "Студент Business System Analysis (BSA)",
+      role: "Junior Business / System Analyst | Frontend Developer",
       summary: [
-        "Студент School 21 и Business System Analysis. Занимаюсь фронтенд-разработкой, UI/UX и созданием Telegram-ботов, а также автоматизацией процессов.",
-        "Имею опыт работы Tribe Master: управление командами, помощь в адаптации и организации процессов.",
+        "Начинающий системный и бизнес-аналитик в активном поиске роли Junior System / Business Analyst. Обучаюсь в School 21 (проект Сбера) по направлению BSA — проектирую БД, работаю с SQL, моделирую бизнес-процессы, создаю UML-диаграммы.",
+        "Совмещаю аналитику с frontend-разработкой: прошёл обучение в Astrum IT Academy (React.js) и ProWeb. Имею лидерский трек в School 21: Volunteer → Tribe Master → Volunteer Lead. Финалист хакатона NEXUS30 (GovTech) и участник 3 GameDev-хакатонов.",
       ],
-      status: "Студент School 21",
+      status: "Студент School 21 | В поиске стажировки",
       experience: [
         {
-          company: "School 21 - Uzbekistan",
-          title: "Tribe Master",
-          period: "2026",
+          company: "Хакатон NEXUS30 — GovTech Track",
+          title: "Frontend & BSA Lead | React, GIS & AI",
+          period: "08.2026",
           bullets: [
-            "Руководил участниками бассейна и помогал адаптироваться к заданиям.",
-            "Координировал командные активности и взаимодействие участников.",
-            "Поддерживал новичков и помогал решать возникающие проблемы.",
-            "Участвовал в организации учебных мероприятий и проектов.",
-            "Развивал лидерство, коммуникацию и командную работу.",
+            "Разработал цифровую платформу «Ёшлар Бандлиги» для Хокимията и 8 махаллей Мирзо-Улугбекского района: сквозной учёт молодёжи, предиктивный NEET-триаж и маршрутизация мер господдержки.",
+            "Спроектировал интерактивную GIS-карту v2.0 (Leaflet) с каноническими GPS-полигонами махаллей, тепловыми зонами риска NEET и маршрутизацией к POI центрам занятости.",
+            "Интегрировал real-time WebSocket синхронизацию с Telegram-ботом (@Eshlar_bandligi_bot) для подомовых обходов и суверенного AI-Советника Хокимията (RAG & NLP).",
+            "Построил дашборд с методологией Zero Inbox, генерацией Excel-отчётов и 100% двуязычной локализацией (RU / O‘Z Latin).",
+          ],
+        },
+        {
+          company: "School 21 — Uzbekistan",
+          title: "Volunteer Lead",
+          period: "02.2026 — 06.2026",
+          bullets: [
+            "Возглавлял волонтёрский корпус: отбирал волонтёров на интенсивы, распределял смены по кластерам, составлял графики дежурств.",
+            "Оцифровал внутренние процессы корпуса на базе Excel: сквозной учёт смен, отработанных часов и расчёт внутренней валюты (коинов).",
+            "Проводил брифинги, мотивировал команду, разрешал внутренние споры между волонтёрами и пирами интенсива.",
+            "Прокачал навыки управления людьми: организация процессов с нуля, координация больших команд, порядок в данных.",
+          ],
+        },
+        {
+          company: "School 21 — Uzbekistan",
+          title: "Tribe Master",
+          period: "09.2025 — 02.2026",
+          bullets: [
+            "4 раза поочерёдно возглавлял все четыре трайба кампуса (Ayid, Laylak, Qolpon, Jayron).",
+            "Мотивировал студентов, вёл рейтинги, организовывал внутренние ивенты.",
+            "Проводил рефлексии после экзаменов: собирал команды, помогал анализировать ошибки, координировал дальнейшие шаги.",
+            "Выступал ментором: направлял студентов и помогал справляться со стрессом во время учёбы.",
+          ],
+        },
+        {
+          company: "School 21 — Uzbekistan",
+          title: "Volunteer",
+          period: "08.2025 — 06.2026",
+          bullets: [
+            "Помогал пирам (студентам) в адаптации: направлял учащихся, консультировал по организационным вопросам, разъяснял работу платформы School 21.",
+            "Контролировал порядок на кампусе: следил за соблюдением внутренних правил, фиксировал нарушения и выдавал пенальти.",
+            "Участвовал в организации мероприятий: помогал команде организаторов проводить внутренние ивенты и крупные события на кампусе.",
+          ],
+        },
+        {
+          company: "Launch Lab 21",
+          title: "Frontend | BSA | QA",
+          period: "10.2025 — 01.2026",
+          bullets: [
+            "Разрабатывал локальную платформу по поиску работы и фриланса с системой безопасной сделки (платформа выступает гарантом).",
+            "BSA: проектировал логику работы сервиса, описывал требования, продумывал функционал безопасной сделки.",
+            "Frontend: отвечал за визуальную часть сайта, верстал интерфейс и переносил логику в работающий код.",
+            "QA: проверял качество платформы, искал баги и тестировал сценарии взаимодействия заказчиков и исполнителей.",
+          ],
+        },
+        {
+          company: "Хакатон GameDev 21 #1",
+          title: "Godot Разработчик | QA",
+          period: "01.2026 — 07.2026",
+          bullets: [
+            "Разрабатывал 2D-игру с видом сверху (Top-Down) на движке Godot.",
+            "Писал логику игры, настраивал поведение персонажей, механики перемещения и взаимодействие объектов.",
+          ],
+        },
+        {
+          company: "Хакатон GameFast.Uz #2",
+          title: "Godot Developer | QA | Pixel Artist 2D",
+          period: "05.2026 — 07.2026",
+          bullets: [
+            "За 3 дня разработал 2D-игру с видом сверху: спроектировал и реализовал основные игровые механики на движке Godot.",
+            "Создавал спрайты и текстуры в Aseprite, совмещал роли разработчика и QA.",
+            "Команда заняла 21-е место среди всех участников GameFast.Uz.",
+          ],
+        },
+        {
+          company: "Хакатон Turkic Game Jam 2026 #3",
+          title: "Godot Developer | QA | Pixel Artist 2D",
+          period: "06.2026 — 06.2026",
+          bullets: [
+            "Разработал визуальный стиль в духе Kingdom: Two Crowns: в Aseprite создал детализированный атмосферный пиксель-арт с проработкой окружения, света и анимаций.",
+            "Реализовал игровую логику на Godot в условиях жёстких дедлайнов хакатона (3 дня).",
+            "Отвечал за контроль качества (QA): регулярное тестирование геймплея, отлов багов, подготовка стабильной сборки к финалу.",
           ],
         },
       ],
       projects: [
+        {
+          slug: "yoshlar-bandligi",
+          title: "Yoshlar Bandligi — GovTech 2.0",
+          description:
+            "Флагманский проект хакатона NEXUS30: цифровая экосистема мониторинга занятости, предиктивного NEET-триажа и умной маршрутизации молодёжи для Хокимията и 8 махаллей Мирзо-Улугбекского района.",
+          tags: ["GovTech", "GIS Map", "Telegram Bot", "AI Copilot", "Hackathon Finalist"],
+          stack: ["React 18", "TypeScript", "TailwindCSS", "Leaflet GIS", "WebSockets", "Node.js", "Express", "Grammy"],
+          highlights: [
+            "Интерактивная GIS-карта v2.0 с GPS-полигонами 8 махаллей, тепловыми зонами риска NEET и инфраструктурой POI.",
+            "Омниканальность: мобильный Telegram-бот @Eshlar_bandligi_bot для подомовых обходов с real-time синхронизацией.",
+            "Zero Inbox & AI-Советник: предиктивный алгоритм выявления безработных и автогенерация служебных записок для Хокима.",
+          ],
+          links: {
+            demo: "https://yoshlar-bandligi-govtech.vercel.app",
+            bot: "https://t.me/Eshlar_bandligi_bot",
+            github: "https://github.com/fluxo159/NEVERLOSE-Memesense",
+          },
+        },
         {
           slug: "telegram-bots",
           title: "S21 Rooms",
@@ -205,25 +294,38 @@ export const profile: Profile = {
         {
           title: "School 21",
           place: "Ташкент, ул. Зиёлилар, 13",
-          period: "2025 - настоящее время",
+          period: "2025 — настоящее время",
           note:
-            "Учебные проекты, мини-приложения и Telegram-боты; навыки BSA и работы с данными.",
+            "Направление BSA: проектирование БД, SQL, моделирование бизнес-процессов, UML-диаграммы. Peer-to-peer обучение: самостоятельный поиск решений, командная работа, защита аналитических решений.",
+        },
+        {
+          title: "Astrum IT Academy",
+          place: "Ташкент",
+          period: "2024 — 2025",
+          note:
+            "Прошёл отборочный интенсив Pre-Season (алгоритмика на C/JavaScript). Основное направление: React.js Frontend Developer — HTML5, CSS3, глубокий JavaScript, React.js. Peer-to-peer обучение на платформе Qwasar.",
         },
         {
           title: "ProWeb",
           place: "улица Айбека, 16",
-          period: "2024 - 2025",
+          period: "2024 — 2025",
           note:
-            "HTML, CSS, JavaScript, Vue, Vite, React, TypeScript, C, Python; учебные проекты.",
+            "Адаптивная вёрстка (HTML5, CSS3), перенос макетов из Figma. JavaScript, React, Vue, Vite. Опыт создания поддерживаемого кода и работы с Git.",
         },
         {
           title: "Gennis",
-          place: "Bo'stonliq ko'chasi, G‘azalkent, Toshkent Viloyati",
-          period: "2023 - 2024",
-          note: "Изучение HTML, CSS, JavaScript.",
+          place: "Bo'stonliq ko'chasi, G'azalkent, Toshkent Viloyati",
+          period: "2023 — 2024",
+          note: "Первые шаги в IT: HTML, CSS, JavaScript, Git, GitHub.",
         },
       ],
       certificates: [
+        {
+          title: "NEXUS30 Hackathon — GovTech Track Finalist",
+          issuer: "NEXUS30 / Startup Garage",
+          year: "2026",
+          url: "/nexus30-certificate.pdf",
+        },
         {
           title: "Game Jam Certificate",
           issuer: "Game Jam",
@@ -243,6 +345,9 @@ export const profile: Profile = {
         "Confluence / Notion",
         "Telegram Bots",
         "Figma",
+        "Leaflet GIS",
+        "Godot Engine",
+        "Aseprite",
         "VS Code",
         "Cursor",
         "Antigravity",
@@ -301,27 +406,64 @@ export const profile: Profile = {
       },
     },
     en: {
-      role: "Business System Analysis (BSA) Student",
+      role: "Junior Business / System Analyst | Frontend Developer",
       summary: [
-        "Motivated School 21 student with solid knowledge of PCs and IT systems.",
-        "Tribe Master experience: lead teams, learn fast, detail-oriented, confident with Excel and Telegram bots.",
+        "Motivated School 21 (Sber project) student specializing in Business & System Analysis (BSA) — designing relational databases, working with SQL, business process modeling, and UML architecture.",
+        "Combining systems analysis with modern frontend engineering (React.js, TypeScript, Leaflet GIS). NEXUS30 GovTech Hackathon Finalist and Tribe Master / Volunteer Lead at School 21.",
       ],
-      status: "Open to internships",
+      status: "Open to internships & junior roles",
       experience: [
+        {
+          company: "NEXUS30 Hackathon — GovTech Track",
+          title: "Frontend & BSA Lead | React, GIS & AI",
+          period: "08.2026",
+          bullets: [
+            "Built 'Yoshlar Bandligi GovTech 2.0' — an omnichannel digital platform for municipal district authorities and youth inspectors across 8 mahallas of Mirzo-Ulugbek district.",
+            "Designed Interactive GIS Map v2.0 (Leaflet) with canonical GPS polygons, NEET risk heatmaps, and automated routing to career infrastructure POIs.",
+            "Integrated real-time WebSocket sync with Telegram Bot (@Eshlar_bandligi_bot) and in-memory Sovereign AI Copilot (RAG & NLP) for executive memo generation.",
+            "Architected Zero Inbox workflow and full bilingual localization (English / Russian / Uzbek Latin).",
+          ],
+        },
+        {
+          company: "School 21 - Uzbekistan",
+          title: "Volunteer Lead",
+          period: "02.2026 — 06.2026",
+          bullets: [
+            "Led the campus volunteer corps: recruited volunteers, distributed cluster shifts, and scheduled duty rosters.",
+            "Digitized internal corps workflows using Excel: automated shift tracking, logged hours, and internal coin currency accounting.",
+            "Conducted briefings, mentored team members, and resolved conflicts between volunteers and intensive participants.",
+          ],
+        },
         {
           company: "School 21 - Uzbekistan",
           title: "Tribe Master",
-          period: "2026",
+          period: "09.2025 — 02.2026",
           bullets: [
-            "Led pool participants and helped them adapt to tasks.",
-            "Coordinated team activities and collaboration.",
-            "Supported newcomers and resolved questions quickly.",
-            "Contributed to organizing learning events and projects.",
-            "Strengthened leadership, communication, and teamwork skills.",
+            "Led all four campus tribes consecutively (Ayid, Laylak, Qolpon, Jayron).",
+            "Coordinated team activities, tracked rankings, and organized internal community events.",
+            "Facilitated post-exam reflections and mentored students through high-stress academic milestones.",
           ],
         },
       ],
       projects: [
+        {
+          slug: "yoshlar-bandligi",
+          title: "Yoshlar Bandligi — GovTech 2.0",
+          description:
+            "Flagship project of the NEXUS30 Hackathon: an omnichannel digital ecosystem for youth employment monitoring, predictive NEET triage, and smart support routing for municipal government.",
+          tags: ["GovTech", "GIS Map", "Telegram Bot", "AI Copilot", "Hackathon Finalist"],
+          stack: ["React 18", "TypeScript", "TailwindCSS", "Leaflet GIS", "WebSockets", "Node.js", "Express", "Grammy"],
+          highlights: [
+            "Interactive GIS Map v2.0 with canonical mahalla GPS boundaries, NEET risk heatmaps, and POI career routing.",
+            "Omnichannel companion: field Telegram bot @Eshlar_bandligi_bot with real-time two-way WebSocket sync.",
+            "Zero Inbox & Sovereign AI Copilot: automated visit quotas and instant executive memo generation for the District Hokim.",
+          ],
+          links: {
+            demo: "https://yoshlar-bandligi-govtech.vercel.app",
+            bot: "https://t.me/Eshlar_bandligi_bot",
+            github: "https://github.com/fluxo159/NEVERLOSE-Memesense",
+          },
+        },
         {
           slug: "telegram-bots",
           title: "S21 Rooms",
@@ -377,14 +519,21 @@ export const profile: Profile = {
           place: "Tashkent, Ziyolilar 13",
           period: "2025 - Present",
           note:
-            "Learning projects, mini apps, and Telegram bots; BSA and data skills.",
+            "BSA track: database modeling, SQL, business process analysis, UML diagrams. Peer-to-peer methodology.",
+        },
+        {
+          title: "Astrum IT Academy",
+          place: "Tashkent",
+          period: "2024 - 2025",
+          note:
+            "Pre-Season intensive & React.js Frontend Developer track: HTML5, CSS3, JavaScript ES6+, React.js.",
         },
         {
           title: "ProWeb",
           place: "Aybek Street 16",
           period: "2024 - 2025",
           note:
-            "HTML, CSS, JavaScript, Vue, Vite, React, TypeScript, C, Python.",
+            "Responsive Web Design, Figma layout implementation, React, Vue, Vite, TypeScript.",
         },
         {
           title: "Gennis",
@@ -394,6 +543,12 @@ export const profile: Profile = {
         },
       ],
       certificates: [
+        {
+          title: "NEXUS30 Hackathon — GovTech Track Finalist",
+          issuer: "NEXUS30 / Startup Garage",
+          year: "2026",
+          url: "/nexus30-certificate.pdf",
+        },
         {
           title: "Game Jam Certificate",
           issuer: "Game Jam",
@@ -413,6 +568,7 @@ export const profile: Profile = {
         "Confluence / Notion",
         "Telegram Bots",
         "Figma",
+        "Leaflet GIS",
         "VS Code",
         "Cursor",
         "Antigravity",
@@ -471,27 +627,64 @@ export const profile: Profile = {
       },
     },
     uz: {
-      role: "Business System Analysis (BSA) talaba",
+      role: "Junior Business / System Analyst | Frontend Developer",
       summary: [
-        "School 21da BSA yo‘nalishida o‘qiyotgan motivatsiyali talabaman.",
-        "Tribe Master tajribam bor: jamoa yetaklayman, tez o‘rganaman, Excel va Telegram botlar bilan ishonchli ishlayman.",
+        "School 21da BSA (Biznes va tizimli tahlil) yo‘nalishida o‘qiyotgan talabaman: ma’lumotlar bazalarini loyihalash, SQL, biznes jarayonlarni modellashtirish va UML diagrammalar.",
+        "Tizimli tahlilni zamonaviy frontend dasturlash (React.js, TypeScript, Leaflet GIS) bilan uyg‘unlashtiraman. NEXUS30 GovTech xakatoni finalchisi hamda School 21da Tribe Master / Volunteer Lead tajribasiga egaman.",
       ],
-      status: "Stajirovka uchun ochiq",
+      status: "Stajirovka va junior lavozimlar uchun ochiq",
       experience: [
+        {
+          company: "NEXUS30 Xakatoni — GovTech yo‘nalishi",
+          title: "Frontend & BSA Lead | React, GIS & AI",
+          period: "08.2026",
+          bullets: [
+            "Mirzo Ulug‘bek tuman hokimiyati va 8 ta mahalla yoshlar yetakchilari uchun «Yoshlar Bandligi» raqamli platformasini ishlab chiqdim: yoshlar hisobi, NEET triaji va davlat yordami dasturlariga yo‘naltirish.",
+            "8 ta mahalla GPS ko‘pburchaklari, NEET xavf qatlamlari va bandlik markazlari (POI) bilan interaktiv GIS xaritasini (Leaflet v2.0) yaratdim.",
+            "Xonadonbay o‘rganish uchun Telegram-bot (@Eshlar_bandligi_bot) bilan real-vaqtdagi WebSocket sinxronizatsiyasi va Hokim uchun AI-Maslahatchini (RAG & NLP) joriy qildim.",
+            "Zero Inbox metodologiyasi, Excel hisobotlar eksporti va 100% ikki tilli interfeysni (Lotin alifbosi / Rus tili) shakllantirdim.",
+          ],
+        },
+        {
+          company: "School 21 - Uzbekistan",
+          title: "Volunteer Lead",
+          period: "02.2026 — 06.2026",
+          bullets: [
+            "Volontyorlar korpusini boshqardim: intensivlarga volontyorlarni saralash, smenalarni taqsimlash va navbatchilik jadvallarini tuzish.",
+            "Excel asosida ichki jarayonlarni raqamlashtirdim: smenalar hisobi, ishlangan soatlar va ichki valyuta hisob-kitobi.",
+            "Brifinglar o‘tkazdim, jamoani rag‘batlantirdim va yuzaga kelgan masalalarni hal qildim.",
+          ],
+        },
         {
           company: "School 21 - Uzbekistan",
           title: "Tribe Master",
-          period: "2026",
+          period: "09.2025 — 02.2026",
           bullets: [
-            "Pool ishtirokchilarini yo‘naltirdim va topshiriqlarga moslashtirdim.",
-            "Jamoaviy faoliyat va hamkorlikni muvofiqlashtirdim.",
-            "Yangi ishtirokchilarga yordam berdim va savollarga javob berdim.",
-            "O‘quv tadbirlari va loyihalarini tashkil etishda qatnashdim.",
-            "Liderlik, muloqot va jamoada ishlash ko‘nikmalarini rivojlantirdim.",
+            "Kampusdagi barcha 4 ta traybni navbatma-navbat boshqardim (Ayid, Laylak, Qolpon, Jayron).",
+            "Jamoaviy faoliyatni muvofiqlashtirdim, reytinglarni yuritdim va tadbirlarni tashkil qildim.",
+            "Talabalarni imtihonlardan so‘ng tahlil qilishga va qiyin o‘quv jarayonlarida stressni yengishga yo‘naltirdim.",
           ],
         },
       ],
       projects: [
+        {
+          slug: "yoshlar-bandligi",
+          title: "Yoshlar Bandligi — GovTech 2.0",
+          description:
+            "NEXUS30 xakatoni flagman loyihasi: tuman hokimiyati va mahalla yetakchilari uchun yoshlar bandligi monitoringi, NEET triaji va davlat dasturlariga yo‘naltirish raqamli ekotizimi.",
+          tags: ["GovTech", "GIS Map", "Telegram Bot", "AI Copilot", "Hackathon Finalist"],
+          stack: ["React 18", "TypeScript", "TailwindCSS", "Leaflet GIS", "WebSockets", "Node.js", "Express", "Grammy"],
+          highlights: [
+            "8 ta mahalla GPS chegaralari, NEET xavf qatlamlari va infratuzilma obyektlari bilan interaktiv GIS xaritasi v2.0.",
+            "Xonadonbay o‘rganish uchun @Eshlar_bandligi_bot mobil Telegram-boti bilan real-vaqtdagi WebSocket sinxronizatsiyasi.",
+            "Zero Inbox va AI-Maslahatchi: xonadonbay ko‘riklar kvotasi va Hokim uchun bildirishnomalarni avtomatik shakllantirish.",
+          ],
+          links: {
+            demo: "https://yoshlar-bandligi-govtech.vercel.app",
+            bot: "https://t.me/Eshlar_bandligi_bot",
+            github: "https://github.com/fluxo159/NEVERLOSE-Memesense",
+          },
+        },
         {
           slug: "telegram-bots",
           title: "S21 Rooms",
@@ -547,7 +740,14 @@ export const profile: Profile = {
           place: "Toshkent, Ziyolilar 13",
           period: "2025 - hozirgacha",
           note:
-            "Mini ilovalar va Telegram botlar, BSA va data ko‘nikmalari.",
+            "BSA yo‘nalishi: ma’lumotlar bazalarini loyihalash, SQL, biznes jarayonlar tahlili, UML diagrammalar.",
+        },
+        {
+          title: "Astrum IT Academy",
+          place: "Toshkent",
+          period: "2024 - 2025",
+          note:
+            "Pre-Season va React.js Frontend Developer yo‘nalishi: HTML5, CSS3, chuqur JavaScript, React.js.",
         },
         {
           title: "ProWeb",
@@ -564,6 +764,12 @@ export const profile: Profile = {
         },
       ],
       certificates: [
+        {
+          title: "NEXUS30 Xakatoni — GovTech yo‘nalishi finalchisi",
+          issuer: "NEXUS30 / Startup Garage",
+          year: "2026",
+          url: "/nexus30-certificate.pdf",
+        },
         {
           title: "Game Jam Certificate",
           issuer: "Game Jam",
@@ -583,6 +789,7 @@ export const profile: Profile = {
         "Confluence / Notion",
         "Telegram Bots",
         "Figma",
+        "Leaflet GIS",
         "VS Code",
         "Cursor",
         "Antigravity",

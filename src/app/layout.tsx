@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Archivo, Space_Grotesk } from "next/font/google";
 import "@/styles/globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { profile } from "@/data/profile";
 
-const inter = Inter({
-  variable: "--font-inter",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -42,7 +50,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={profile.defaultLocale}>
-      <body className={`${inter.variable} antialiased`}>
+      <body
+        className={`${archivo.variable} ${spaceGrotesk.variable} antialiased font-[family-name:var(--font-space-grotesk)]`}
+      >
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

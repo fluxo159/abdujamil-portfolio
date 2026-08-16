@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Резюме — Айдарбеков Абдужамил Бахтович</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #d6d0c4;
+      font-family: 'Libre Baskerville', 'Times New Roman', Georgia, serif;
+      font-size: 11pt;
+      color: #111;
+    }
+
+    /* ─── PAGE ─── */
+    .page {
+      max-width: 210mm;
+      min-height: 297mm;
+      margin: 32px auto;
+      background: #faf9f7;
+      padding: 22mm 24mm 22mm 24mm;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.22);
+    }
+
+    /* ─── HEADER ─── */
+    .cv-header {
+      text-align: center;
+      border-bottom: 2px solid #111;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+
+    .cv-name {
+      font-size: 18pt;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .cv-role {
+      font-size: 10pt;
+      font-style: italic;
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+      color: #333;
+    }
+
+    .cv-contacts {
+      margin-top: 8px;
+      font-size: 9.5pt;
+      color: #222;
+      line-height: 1.8;
+    }
+
+    .cv-contacts a {
+      color: #111;
+      text-decoration: none;
+    }
+
+    .cv-contacts .sep {
+      margin: 0 8px;
+      color: #888;
+    }
+
+    /* ─── SECTION ─── */
+    .section {
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #111;
+      padding-bottom: 3px;
+      margin-bottom: 10px;
+    }
+
+    /* ─── PARAGRAPH / OBJECTIVE ─── */
+    .objective {
+      font-size: 10.5pt;
+      line-height: 1.65;
+      text-align: justify;
+      color: #1a1a1a;
+    }
+
+    /* ─── EXPERIENCE ENTRY ─── */
+    .entry {
+      margin-bottom: 13px;
+    }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .entry-org {
+      font-weight: 700;
+      font-size: 10.5pt;
+    }
+
+    .entry-period {
+      font-size: 9.5pt;
+      font-style: italic;
+      white-space: nowrap;
+      color: #333;
+    }
+
+    .entry-title {
+      font-size: 10pt;
+      font-style: italic;
+      margin-bottom: 5px;
+    }
+
+    .entry-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .entry-list li {
+      position: relative;
+      padding-left: 16px;
+      font-size: 10pt;
+      line-height: 1.6;
+      text-align: justify;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+
+    .entry-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #444;
+    }
+
+    /* ─── TWO COLUMN ─── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 36px;
+    }
+
+    /* ─── EDUCATION ─── */
+    .edu-entry {
+      margin-bottom: 11px;
+    }
+
+    .edu-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .edu-school {
+      font-weight: 700;
+      font-size: 10.5pt;
+    }
+
+    .edu-period {
+      font-size: 9.5pt;
+      font-style: italic;
+      color: #333;
+      white-space: nowrap;
+    }
+
+    .edu-place {
+      font-size: 9.5pt;
+      font-style: italic;
+      color: #444;
+      margin-bottom: 1px;
+    }
+
+    .edu-note {
+      font-size: 9.5pt;
+      line-height: 1.55;
+      color: #1a1a1a;
+      text-align: justify;
+    }
+
+    /* ─── SKILLS TABLE ─── */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10pt;
+    }
+
+    .skills-table td {
+      padding: 3px 6px 3px 0;
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .skills-table td:first-child {
+      font-weight: 700;
+      white-space: nowrap;
+      padding-right: 16px;
+      width: 30%;
+      font-size: 9.5pt;
+    }
+
+    /* ─── SIMPLE LIST ─── */
+    .plain-list {
+      font-size: 10pt;
+      line-height: 1.7;
+      color: #1a1a1a;
+    }
+
+    .plain-list li {
+      list-style: none;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .plain-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #444;
+    }
+
+    /* ─── DIVIDER ─── */
+    .inner-rule {
+      border: none;
+      border-top: 0.5px solid #bbb;
+      margin: 10px 0;
+    }
+
+    /* ─── CERT ─── */
+    .cert-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10pt;
+      line-height: 1.7;
+    }
+
+    .cert-name { font-style: italic; }
+    .cert-meta { color: #444; font-size: 9.5pt; }
+
+    /* ─── FOOTER LINE ─── */
+    .cv-footer {
+      margin-top: 20px;
+      border-top: 1px solid #111;
+      padding-top: 6px;
+      text-align: center;
+      font-size: 8.5pt;
+      color: #555;
+      font-style: italic;
+      letter-spacing: 0.3px;
+    }
+
+    /* ─── PRINT ─── */
+    @media print {
+      body { background: white; }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        padding: 18mm 20mm;
+      }
+      .no-print { display: none !important; }
+    }
+
+    /* ─── TOOLBAR ─── */
+    .toolbar {
+      max-width: 210mm;
+      margin: 0 auto 12px auto;
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      background: #111;
+      color: #faf9f7;
+      border: none;
+      padding: 7px 18px;
+      font-family: 'Libre Baskerville', serif;
+      font-size: 9.5pt;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: background 0.15s;
+    }
+
+    .btn:hover { background: #333; }
+  </style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  <button class="btn" onclick="window.print()">Печать / Сохранить PDF</button>
+</div>
+
+<div class="page">
+
+  <!-- ══════════ ШАПКА ══════════ -->
+  <header class="cv-header">
+    <div class="cv-name">Айдарбеков Абдужамил Бахтович</div>
+    <div class="cv-role">Junior Business / System Analyst &nbsp;·&nbsp; Frontend Developer</div>
+    <div class="cv-contacts">
+      <a href="tel:+998932224099">+998-93-222-40-99</a>
+      <span class="sep">|</span>
+      <a href="mailto:aydarkurbanbaev1406@gmail.com">aydarkurbanbaev1406@gmail.com</a>
+      <span class="sep">|</span>
+      Telegram: <a href="https://t.me/Jamilf1">@Jamilf1</a>
+      <span class="sep">|</span>
+      GitHub: <a href="https://github.com/fluxo159">github.com/fluxo159</a>
+      <br/>
+      Ташкент, Бустонлик, Республика Узбекистан
+    </div>
+  </header>
+
+  <!-- ══════════ ПРОФИЛЬ ══════════ -->
+  <section class="section">
+    <div class="section-title">Профессиональный профиль</div>
+    <p class="objective">
+      Начинающий бизнес- и системный аналитик, проходящий обучение в School 21 (проект Сбера, Ташкент) по направлению Business &amp; System Analysis. Владею навыками проектирования реляционных баз данных, составления SQL-запросов, моделирования бизнес-процессов в нотации BPMN, построения UML-диаграмм и формализации требований. Параллельно имею практический опыт Frontend-разработки, полученный в ходе обучения в Astrum IT Academy и ProWeb: разработка пользовательских интерфейсов на HTML5/CSS3/JavaScript, React.js и Vue.js. Владею лидерским опытом в рамках Student Government трека School 21: Volunteer → Tribe Master → Volunteer Lead. Участник трёх GameDev-хакатонов в ролях разработчика, QA-инженера и пиксель-художника. Ищу позицию стажёра или Junior-специалиста в области бизнес-анализа либо frontend-разработки.
+    </p>
+  </section>
+
+  <!-- ══════════ ОПЫТ ══════════ -->
+  <section class="section">
+    <div class="section-title">Профессиональный опыт</div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-org">School 21 — Uzbekistan</span>
+        <span class="entry-period">Февраль 2026 — Июнь 2026</span>
+      </div>
+      <div class="entry-title">Volunteer Lead (Руководитель волонтёрского корпуса)</div>
+      <ul class="entry-list">
+        <li>Осуществлял полное руководство волонтёрским корпусом: отбор кандидатов, распределение смен по кластерам, составление расписания дежурств.</li>
+        <li>Оцифровал и систематизировал внутренние процессы корпуса средствами Microsoft Excel: учёт смен, отработанных часов и расчёт внутренней валюты (коинов).</li>
+        <li>Проводил инструктажи и брифинги, обеспечивал координацию команды, разрешал трудовые разногласия между волонтёрами и участниками интенсива.</li>
+      </ul>
+    </div>
+
+    <hr class="inner-rule"/>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-org">School 21 — Uzbekistan</span>
+        <span class="entry-period">Сентябрь 2025 — Февраль 2026</span>
+      </div>
+      <div class="entry-title">Tribe Master (Руководитель учебного трайба)</div>
+      <ul class="entry-list">
+        <li>Поочерёдно возглавлял все четыре трайба кампуса: Ayid, Laylak, Qolpon, Jayron.</li>
+        <li>Формировал мотивационную среду, вёл внутренние рейтинги успеваемости, организовывал учебные и социальные мероприятия.</li>
+        <li>Выполнял функции наставника: направлял студентов, проводил рефлексии по итогам экзаменов, оказывал психологическую поддержку в период аттестаций.</li>
+      </ul>
+    </div>
+
+    <hr class="inner-rule"/>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-org">School 21 — Uzbekistan</span>
+        <span class="entry-period">Август 2025 — Июнь 2026</span>
+      </div>
+      <div class="entry-title">Volunteer (Волонтёр кампуса)</div>
+      <ul class="entry-list">
+        <li>Обеспечивал адаптацию новых участников (пиров): консультирование по организационным вопросам, разъяснение регламентов платформы.</li>
+        <li>Участвовал в организации внутренних мероприятий кампуса.</li>
+      </ul>
+    </div>
+
+    <hr class="inner-rule"/>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-org">Launch Lab 21</span>
+        <span class="entry-period">Октябрь 2025 — Январь 2026</span>
+      </div>
+      <div class="entry-title">Frontend Developer / Business &amp; System Analyst / QA Engineer</div>
+      <ul class="entry-list">
+        <li>Участвовал в разработке локальной платформы поиска работы и фриланса с механизмом безопасной сделки (эскроу-гарант).</li>
+        <li><em>BSA:</em> формализовал бизнес-требования, проектировал логику сервиса, разрабатывал функциональные спецификации модуля безопасной сделки.</li>
+        <li><em>Frontend:</em> реализовывал пользовательский интерфейс: вёрстка, клиентская логика, интеграция с API.</li>
+        <li><em>QA:</em> разрабатывал тест-сценарии, проводил функциональное тестирование взаимодействия заказчиков и исполнителей, документировал дефекты.</li>
+      </ul>
+    </div>
+
+    <hr class="inner-rule"/>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-org">Хакатоны GameDev (3 мероприятия)</span>
+        <span class="entry-period">Январь — Июнь 2026</span>
+      </div>
+      <div class="entry-title">Godot Developer / QA Engineer / Pixel Artist 2D</div>
+      <ul class="entry-list">
+        <li><em>GameDev 21 №1 (январь 2026):</em> разработка 2D Top-Down игры на движке Godot; реализация игровой логики, механик перемещения и взаимодействия объектов.</li>
+        <li><em>GameFast.Uz №2 (май 2026):</em> разработка 2D-игры в трёхдневном марафоне; создание спрайтов и текстур в Aseprite; совмещение ролей разработчика и QA. Команда заняла 21-е место.</li>
+        <li><em>Turkic Game Jam 2026 №3 (июнь 2026):</em> разработка визуального стиля в духе Kingdom: Two Crowns; реализация игровой логики на Godot; контроль качества сборки.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════ ПРОЕКТЫ ══════════ -->
+  <section class="section">
+    <div class="section-title">Реализованные проекты</div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-org">S21 Rooms — Telegram Mini App для бронирования переговорных</span>
+        <span class="entry-period">2025</span>
+      </div>
+      <div class="entry-title">Стек: JavaScript, Node.js, Telegram Bot API</div>
+      <ul class="entry-list">
+        <li>Разработал систему бронирования учебных аудиторий School 21 в реальном времени; позволила исключить дублирующие записи и устранить организационный хаос.</li>
+        <li>Репозиторий: github.com/fluxo159/school21-bot</li>
+      </ul>
+    </div>
+
+    <hr class="inner-rule"/>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-org">FurniCatalog — онлайн-каталог мебели</span>
+        <span class="entry-period">2024</span>
+      </div>
+      <div class="entry-title">Стек: HTML5, CSS3, JavaScript</div>
+      <ul class="entry-list">
+        <li>Онлайн-витрина с каталогом мебели, навигацией по категориям и оформлением заказа через Telegram-бот.</li>
+      </ul>
+    </div>
+
+    <hr class="inner-rule"/>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-org">BSA Study Case — учебный аналитический кейс</span>
+        <span class="entry-period">2025</span>
+      </div>
+      <div class="entry-title">Инструменты: Excel, UML, BPMN</div>
+      <ul class="entry-list">
+        <li>Разработка полного аналитического кейса: сбор и формализация требований, моделирование бизнес-процессов, построение диаграмм, презентация результатов рабочей группе.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════ ОБРАЗОВАНИЕ ══════════ -->
+  <section class="section">
+    <div class="section-title">Образование</div>
+
+    <div class="edu-entry">
+      <div class="edu-head">
+        <span class="edu-school">School 21 (образовательный проект Сбера)</span>
+        <span class="edu-period">2025 — настоящее время</span>
+      </div>
+      <div class="edu-place">Ташкент, ул. Зиёлилар, 13</div>
+      <div class="edu-note">Направление: Business &amp; System Analysis. Дисциплины: проектирование реляционных баз данных, язык запросов SQL, моделирование бизнес-процессов (BPMN), UML-диаграммирование, peer-to-peer методология обучения.</div>
+    </div>
+
+    <div class="edu-entry">
+      <div class="edu-head">
+        <span class="edu-school">Astrum IT Academy</span>
+        <span class="edu-period">2024 — 2025</span>
+      </div>
+      <div class="edu-place">Ташкент</div>
+      <div class="edu-note">Направление: React.js Frontend Developer. Программа: отборочный интенсив Pre-Season (алгоритмика, C/JavaScript), HTML5, CSS3, JavaScript (углублённо), React.js. Обучение на платформе Qwasar.</div>
+    </div>
+
+    <div class="edu-entry">
+      <div class="edu-head">
+        <span class="edu-school">ProWeb — учебный центр веб-разработки</span>
+        <span class="edu-period">2024 — 2025</span>
+      </div>
+      <div class="edu-place">Ташкент, ул. Айбека, 16</div>
+      <div class="edu-note">Адаптивная вёрстка (HTML5, CSS3), перенос макетов из Figma, JavaScript, React, Vue, Vite, TypeScript, основы работы с Git.</div>
+    </div>
+
+    <div class="edu-entry">
+      <div class="edu-head">
+        <span class="edu-school">Gennis — учебный центр</span>
+        <span class="edu-period">2023 — 2024</span>
+      </div>
+      <div class="edu-place">G'azalkent, Ташкентская область</div>
+      <div class="edu-note">Базовый курс: HTML, CSS, JavaScript, система контроля версий Git/GitHub.</div>
+    </div>
+  </section>
+
+  <!-- ══════════ НАВЫКИ ══════════ -->
+  <section class="section">
+    <div class="section-title">Профессиональные навыки</div>
+    <table class="skills-table">
+      <tr>
+        <td>Frontend:</td>
+        <td>HTML5, CSS3, JavaScript (ES6+), React.js, Vue.js, Vite, TypeScript (базовый)</td>
+      </tr>
+      <tr>
+        <td>Аналитика:</td>
+        <td>SQL, UML, BPMN, моделирование бизнес-процессов, формализация требований, работа с Excel/Google Sheets</td>
+      </tr>
+      <tr>
+        <td>Backend / Bot:</td>
+        <td>Node.js (базовый), Telegram Bot API</td>
+      </tr>
+      <tr>
+        <td>GameDev:</td>
+        <td>Godot Engine (GDScript), Aseprite (пиксель-арт), QA-тестирование</td>
+      </tr>
+      <tr>
+        <td>Прочее:</td>
+        <td>Git, GitHub, Figma, VS Code, Python (базовый), C (базовый)</td>
+      </tr>
+      <tr>
+        <td>Soft Skills:</td>
+        <td>Управление командой, наставничество, планирование, публичные выступления, работа в условиях сжатых сроков</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- ══════════ СЕРТИФИКАТЫ ══════════ -->
+  <div class="two-col">
+    <section class="section">
+      <div class="section-title">Сертификаты</div>
+      <div class="cert-row">
+        <span class="cert-name">Game Jam Certificate</span>
+        <span class="cert-meta">Game Jam, 2026</span>
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">ProWeb Certificate</span>
+        <span class="cert-meta">ProWeb, 2025</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Владение языками</div>
+      <ul class="plain-list">
+        <li>Узбекский — родной</li>
+        <li>Русский — свободно (C1)</li>
+        <li>Казахский — разговорный</li>
+        <li>Жестовый язык СНГ — базовый</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- ══════════ ИНСТРУМЕНТЫ ══════════ -->
+  <section class="section">
+    <div class="section-title">Инструменты и программное обеспечение</div>
+    <p class="objective" style="font-size:10pt; text-align:left;">
+      Microsoft Word, Microsoft Excel, Google Docs, Google Sheets, Confluence, Notion, Figma, Godot Engine, Aseprite, VS Code, Cursor, Git, GitHub, Telegram Bots.
+    </p>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <div class="cv-footer">
+    Резюме составлено по состоянию на июль 2026 г. &nbsp;·&nbsp; Ташкент, Республика Узбекистан
+  </div>
+
+</div><!-- /page -->
+
+</body>
+</html>
