@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="430" viewBox="0 0 1280 430" role="img" aria-labelledby="title description">
+  <title id="title">Abdujamil Aydarbekov — Personal Portfolio</title>
+  <desc id="description">A dark cover with typography and three cards for projects, experience and three interface languages.</desc>
+  <rect width="1280" height="430" rx="22" fill="#09090b"/>
+  <rect x="1" y="1" width="1278" height="428" rx="21" fill="none" stroke="#27272d"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="62" y="63" fill="#a1a1aa" font-size="12" letter-spacing="3">PERSONAL PORTFOLIO</text>
+    <path d="M62 85H1218" stroke="#29292f"/>
+    <text x="58" y="165" fill="#fafafa" font-size="62" font-weight="700" letter-spacing="-2">ABDUJAMIL</text>
+    <text x="58" y="235" fill="#fafafa" font-size="62" font-weight="700" letter-spacing="-2">AYDARBEKOV<tspan fill="#6b9eff">.</tspan></text>
+    <text x="62" y="280" fill="#a1a1aa" font-size="18">Projects, experience and a path through technology.</text>
+    <text x="62" y="363" fill="#b4b4bf" font-size="12" letter-spacing=".5">NEXT.JS</text>
+    <text x="151" y="363" fill="#555560" font-size="12">/</text>
+    <text x="173" y="363" fill="#b4b4bf" font-size="12" letter-spacing=".5">REACT</text>
+    <text x="244" y="363" fill="#555560" font-size="12">/</text>
+    <text x="266" y="363" fill="#b4b4bf" font-size="12" letter-spacing=".5">TYPESCRIPT</text>
+    <text x="378" y="363" fill="#555560" font-size="12">/</text>
+    <text x="400" y="363" fill="#b4b4bf" font-size="12" letter-spacing=".5">TAILWIND CSS</text>
+    <rect x="750" y="117" width="468" height="87" rx="16" fill="#141416" stroke="#29292f"/>
+    <text x="773" y="145" fill="#83838e" font-size="10" letter-spacing="2">01 / PROJECTS</text>
+    <text x="773" y="178" fill="#f0f0f4" font-size="22" font-weight="600">Ideas into working things.</text>
+    <path d="M1172 142h19v19m-19 0 19-19" stroke="#6b9eff" stroke-width="2" fill="none"/>
+    <rect x="750" y="219" width="227" height="115" rx="16" fill="#141416" stroke="#29292f"/>
+    <text x="773" y="247" fill="#83838e" font-size="10" letter-spacing="2">02 / EXPERIENCE</text>
+    <text x="773" y="278" fill="#f0f0f4" font-size="20">Build. Learn.</text>
+    <text x="773" y="307" fill="#a1a1aa" font-size="13">Share the process.</text>
+    <rect x="992" y="219" width="226" height="115" rx="16" fill="#141416" stroke="#29292f"/>
+    <text x="1015" y="247" fill="#83838e" font-size="10" letter-spacing="2">03 / LANGUAGES</text>
+    <text x="1015" y="283" fill="#f0f0f4" font-size="23" font-weight="600">RU <tspan fill="#555560">/</tspan> EN <tspan fill="#555560">/</tspan> UZ</text>
+    <text x="1015" y="307" fill="#a1a1aa" font-size="13">One portfolio, three voices.</text>
+  </g>
+</svg>
